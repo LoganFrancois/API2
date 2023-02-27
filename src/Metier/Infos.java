@@ -1,23 +1,24 @@
 package Metier;
 
 import java.time.LocalDate;
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Infos {
 
     private LocalDate dateLecture;
     private Employe employe;
-    private Message message;
+    private int idMessage;
 
 
     public Infos(LocalDate dateLecture) {
         this.dateLecture = dateLecture;
     }
 
-    public Infos(LocalDate dateLecture, Employe employe, Message message) {
+    public Infos(LocalDate dateLecture, Employe employe) {
         this.dateLecture = dateLecture;
         this.employe = employe;
-        this.message = message;
+
     }
 
     public LocalDate getDateLecture() {
@@ -36,12 +37,7 @@ public class Infos {
         this.employe = employe;
     }
 
-    public Message getMessage() {
-        return message;
-    }
 
-    public void setMessage(Message message) {
-        this.message = message;
-    }
 }
+
 

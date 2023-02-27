@@ -2,6 +2,8 @@ package Metier;
 
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -12,10 +14,6 @@ import java.util.Objects;
 
 public class Bureau {
 
-    /**
-     * Générateur statique de l'id d'un bureau
-     */
-    private static int idBureauAct = 0;
 
     /**
      * identifiant unique du bureau
@@ -32,6 +30,10 @@ public class Bureau {
      */
     private String tel;
 
+    /**
+     * liste des employés du bureau
+     */
+    private List<Employe> listeEmploye = new ArrayList<>();
 
     /**
      * Constructeur par défaut
@@ -112,12 +114,20 @@ public class Bureau {
     }
 
     /**
-     * setter idBureau
+     * setter tel du bureau
      *
      * @param tel telephone du bureau
      */
     public void setTel(String tel) {
         this.tel = tel;
+    }
+
+    public List<Employe> getListeEmploye() {
+        return listeEmploye;
+    }
+
+    public void setListeEmploye(List<Employe> listeEmploye) {
+        this.listeEmploye = listeEmploye;
     }
 
     @Override

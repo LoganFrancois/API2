@@ -1,18 +1,22 @@
 package Metier;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Employe {
 
-    private static int idEmployeAct = 0;
     private int idEmploye;
     private String mail;
     private String nom;
     private String prenom;
     private Bureau bureau;
 
+
+
+
     public Employe(int idEmploye, String mail, String nom, String prenom, Bureau bureau) {
-        this.idEmploye = ++idEmployeAct;
+        this.idEmploye = idEmploye;
         this.mail = mail;
         this.nom = nom;
         this.prenom = prenom;
@@ -70,7 +74,6 @@ public class Employe {
     public void setBureau(Bureau bureau) {
         this.bureau = bureau;
     }
-
 
     @Override
     public String toString() {

@@ -1,23 +1,35 @@
 package Metier;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Message {
 
 
-    private static int idMessageAct = 0;
     private int idMessage;
     private String objet;
     private String contenu;
     private LocalDate dateEnvoi;
-    private Employe employe;
+    private Employe emetteur;
+    private List<Infos> listeInfos = new ArrayList<>();
 
 
-    public Message(int idMessage, String objet, String contenu, LocalDate dateEnvoi, Employe employe) {
-        this.idMessage = ++idMessageAct;
+    public Message(int idMessage, String objet, String contenu, LocalDate dateEnvoi, Employe emetteur, List<Infos> listeInfos) {
+        this.idMessage = idMessage;
         this.objet = objet;
         this.contenu = contenu;
         this.dateEnvoi = dateEnvoi;
-        this.employe = employe;
+        this.emetteur = emetteur;
+        this.listeInfos = listeInfos;
+    }
+
+    public Message(int idMessage, String objet, String contenu, LocalDate dateEnvoi, Employe employe) {
+        this.idMessage = idMessage;
+        this.objet = objet;
+        this.contenu = contenu;
+        this.dateEnvoi = dateEnvoi;
+        this.emetteur = emetteur;
     }
 
 
@@ -25,7 +37,7 @@ public class Message {
         this.objet = objet;
         this.contenu = contenu;
         this.dateEnvoi = dateEnvoi;
-        this.employe = employe;
+        this.emetteur = emetteur;
     }
 
     public int getIdMessage() {
@@ -60,12 +72,20 @@ public class Message {
         this.dateEnvoi = dateEnvoi;
     }
 
-    public Employe getEmploye() {
-        return employe;
+    public Employe getEmetteur() {
+        return emetteur;
     }
 
-    public void setEmploye(Employe employe) {
-        this.employe = employe;
+    public void setEmetteur(Employe emetteur) {
+        this.emetteur = emetteur;
+    }
+
+    public List<Infos> getListeInfos() {
+        return listeInfos;
+    }
+
+    public void setListeInfos(List<Infos> listeInfos) {
+        this.listeInfos = listeInfos;
     }
 
     @Override
@@ -75,7 +95,11 @@ public class Message {
                 ", objet='" + objet + '\'' +
                 ", contenu='" + contenu + '\'' +
                 ", dateEnvoi=" + dateEnvoi +
-                ", employe=" + employe +
+                ", emetteur=" + emetteur +
                 '}';
     }
+
+
+
+
 }
